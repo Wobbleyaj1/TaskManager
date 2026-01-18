@@ -1,0 +1,23 @@
+# Task storage file (user data)
+tasks.txt
+test_tasks.txt
+
+# Binaries
+goworld
+goworld-mac
+goworld-linux
+goworld.exe
+
+# Test coverage files
+coverage.out
+*.test
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
