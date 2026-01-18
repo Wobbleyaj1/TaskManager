@@ -3,10 +3,10 @@ tasks.txt
 test_tasks.txt
 
 # Binaries
-goworld
-goworld-mac
-goworld-linux
-goworld.exe
+TaskManager
+TaskManager-mac
+TaskManager-linux
+TaskManager.exe
 
 # Test coverage files
 coverage.out

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-GoWorld is a command-line task management application written in Go. It provides a simple and intuitive interface for managing your daily tasks with features including task creation, listing, status tracking, and deletion.
+TaskManager is a command-line task management application written in Go. It provides a simple and intuitive interface for managing your daily tasks with features including task creation, listing, status tracking, and deletion.
 
 ### Features
 
@@ -81,7 +81,7 @@ When you run the application, you'll see a command prompt. Type one of the follo
 1. Clone or download the project to your local machine
 2. Navigate to the project directory:
    ```bash
-   cd /path/to/GoWorld
+   cd /path/to/TaskManager
    ```
 
 ### Running the Application
@@ -96,10 +96,10 @@ go run main.go
 
 ```bash
 # Build the executable
-go build -o goworld
+go build -o TaskManager
 
 # Run the executable
-./goworld
+./TaskManager
 ```
 
 ### Running Tests
@@ -121,7 +121,7 @@ go tool cover -html=coverage.out
 ## Code Structure
 
 ```
-GoWorld/
+TaskManager/
 ├── main.go          # Main application code
 ├── main_test.go     # Unit tests for core functionality
 ├── tasks.txt        # Persistent task storage (created automatically)
