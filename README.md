@@ -108,14 +108,8 @@ The project includes comprehensive unit tests for core functionality:
 
 ```bash
 # Run all tests
-go test
-
 # Run tests with coverage
 go test -cover
-
-# Run tests with detailed coverage report
-go test -coverprofile=coverage.out
-go tool cover -html=coverage.out
 ```
 
 ## Code Structure

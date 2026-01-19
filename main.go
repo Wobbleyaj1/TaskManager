@@ -1,15 +1,30 @@
 package main
 
 import (
-	"bufio" // For reading user input
-	"fmt" // For standard library
-	"os" // For os operations such as exit
-	"strings"
+	"bufio"   // For reading user input
+	"fmt"     // For standard library
+	"os"      // For os operations such as exit
 	"strconv" // Convert string to int
+	"strings"
 )
 
 // File path constant for storing tasks persistently
 const tasksFile = "tasks.txt"
+
+// formatTask creates a task string from name and description with Pending status
+func formatTask(name, description string) string {
+	return name + " - " + description + " - [Pending]"
+}
+
+// markTaskDone changes a task status from [Pending] to [Done]
+func markTaskDone(task string) string {
+	return strings.Replace(task, " [Pending]", " [Done]", 1)
+}
+
+// isTaskDone checks if a task is marked as done
+func isTaskDone(task string) bool {
+	return strings.Contains(task, " [Done]")
+}
 
 // loadTasks reads tasks from the text file and returns them as a slice
 func loadTasks() []string {
@@ -81,7 +96,7 @@ func addTask(tasks []string) []string {
 	taskDescription := strings.TrimSpace(input2) // Trim whitespace/newline from input
 
 	// Combine name and description with Pending status
-	newTask := taskName + " - " + taskDescription + " - [Pending]"
+	newTask := formatTask(taskName, taskDescription)
 
 	tasks = append(tasks, newTask)
 	
@@ -123,13 +138,13 @@ func markTask(tasks []string) []string {
 	}
 
 	// Check if task is already marked as done
-	if strings.Contains(tasks[taskID], " [Done]") {
+	if isTaskDone(tasks[taskID]) {
 		fmt.Println("Task is already marked as done")
 		return tasks
 	}
 
 	// Mark task as done by replacing [Pending] with [Done]
-	tasks[taskID] = strings.Replace(tasks[taskID], " [Pending]", " [Done]", 1)
+	tasks[taskID] = markTaskDone(tasks[taskID])
 	
 	// Save tasks to file after marking as done
 	saveTasks(tasks)
