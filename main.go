@@ -174,7 +174,7 @@ func deleteTask(tasks []string) []string {
 		return tasks
 	}
 
-	//Remove taskID from tasks
+	// Remove taskID from tasks
 	tasks = append(tasks[:taskID], tasks[taskID+1:]...)
 	
 	// Save tasks to file after deletion
