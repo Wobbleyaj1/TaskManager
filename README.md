@@ -96,9 +96,12 @@ go run main.go
 
 ```bash
 # Build the executable
-go build -o TaskManager
+go build
 
-# Run the executable
+# Run the executable (Windows)
+./TaskManager.exe
+
+# Run the executable (macOS/Linux)
 ./TaskManager
 ```
 
